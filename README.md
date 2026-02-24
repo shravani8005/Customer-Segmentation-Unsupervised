@@ -1,116 +1,100 @@
+# AI-Driven Customer Intelligence System for Strategic Business Decision Making
 
-## Project Overview
+## 1. Problem Statement
 
-This project implements an end-to-end customer segmentation system using 
-unsupervised machine learning techniques to identify meaningful customer groups 
-and generate actionable business insights.
+A company has collected large volumes of customer data but does not know:
+- Who their most valuable customers are
+- Which customers are likely to churn
+- Which group spends the most
+- Which group responds better to offers
 
-The system helps businesses:
-- Identify high-value customers
-- Detect churn-prone segments
-- Optimize marketing strategies
-- Enable data-driven decision-making
+There are no labels provided.
 
+This project applies unsupervised machine learning techniques to identify meaningful customer segments and provide actionable business recommendations.
 
-## Problem Statement
+---
 
-Organizations often possess large volumes of customer data without labeled outcomes. 
-This project applies clustering algorithms to segment customers based on behavioral, 
-financial, and demographic features.
+## 2. Dataset Description
 
+Dataset Used: Bank Marketing Dataset  
+Source: Kaggle  
+Records: 5,000+ customer entries  
 
-## Dataset Information
+Features include:
+- Age
+- Job
+- Marital Status
+- Education
+- Balance
+- Campaign interactions
+- Contact duration
+- Previous contact history
+- Deposit response
 
-- Dataset: Bank Marketing Dataset
-- Source: Kaggle
-- Records: 5000+ customers
-- Features: Demographic, financial, behavioral attributes
+The dataset contains demographic, financial, and behavioral attributes required for customer segmentation.
 
+---
 
+## 3. Algorithms Used
 
-## Technologies Used
+The following unsupervised algorithms were implemented and compared:
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-- Seaborn
-- VS Code
-
-
-
-## Project Structure
-customer-segmentation-unsupervised-shravani/
-│
-├── data/
-│ ├── raw/
-│ └── processed/
-│
-├── notebooks/
-│ ├── 01_data_preprocessing.ipynb
-│ ├── 02_eda.ipynb
-│ ├── 03_feature_engineering.ipynb
-│ ├── 04_clustering_models.ipynb
-│ ├── 05_model_comparison.ipynb
-│ └── 06_visualization.ipynb
-│
-├── reports/
-│ ├── final_report.pdf
-│ └── business_insights.md
-│
-├── results/
-│ ├── cluster_plots/
-│ └── pca_outputs/
-│
-├── main.py
-├── requirements.txt
-└── README.md
-
-
-## Clustering Algorithms Implemented
-
-- K-Means
+- K-Means Clustering
 - Hierarchical Clustering
 - DBSCAN
-- Gaussian Mixture Model (GMM)
 
 Cluster optimization was performed using:
 - Elbow Method
 - Silhouette Score
-- Davies–Bouldin Index
+- Davies-Bouldin Index
 
+---
 
-## Dimensionality Reduction
+## 4. How to Run the Project
 
-- Principal Component Analysis (PCA)
-- t-SNE (for non-linear visualization)
+Step 1: Install dependencies
+     pip install -r requirements.txt
 
+Step 2: Run the main pipeline
+    python main.py
 
-## Business Insights
+The script will:
+- Load dataset
+- Perform preprocessing
+- Train clustering model
+- Print Silhouette score
+- Save final clustered output
 
-The model identified four distinct customer segments:
+---
 
-1. High-Value Engaged Customers
-2. Low-Engagement At-Risk Customers
-3. High Contact Low Conversion Customers
-4. Stable Moderate-Value Customers
+## 5. Key Results
 
-Each segment includes strategic recommendations for marketing and retention.
+- Optimal number of clusters found: 4
+- Best performing algorithm: K-Means
+- Silhouette Score: ~0.11
 
+Business Insights:
 
-## How to Run the Project
+- Identified high-value customer segment
+- Detected at-risk customer group
+- Found high-contact low-conversion segment
+- Provided marketing strategy recommendations per cluster
 
-1. Clone the repository
-2. Create virtual environment
-3. Install dependencies
-4. pip install -r requirements.txt
-5. Run notebooks sequentially OR execute
+---
 
+## 6. Sample Visualizations
 
+Below are sample outputs generated during the project:
 
-## Conclusion
+1. Elbow Method Plot  
+2. Silhouette Score Plot  
+3. PCA Cluster Visualization  
 
-This project demonstrates how unsupervised machine learning can transform raw 
-customer data into strategic business intelligence.
+### Elbow Method Plot
+![Elbow Plot](results/cluster_plots/elbow_plot.png)
 
+### Silhouette Score Plot
+![Silhouette Plot](results/cluster_plots/silhouette_plot.png)
+
+### PCA Cluster Visualization
+![PCA Clusters](results/pca_outputs/pca_clusters.png)
